@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+    ServerAdmin jenkinsadmin@freshpp.com
+    ServerName jenkins.freshbugs.io
+    ServerAlias jenkins
+    ProxyRequests Off
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+    ProxyPreserveHost on
+    ProxyPass         /  http://localhost:8080/ nocanon
+    ProxyPassReverse  /  http://localhost:8080/
+    ProxyPassReverse  /  http://jenkins.freshbugs.io/
+</VirtualHost>
