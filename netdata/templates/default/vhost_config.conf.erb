@@ -1,6 +1,6 @@
 upstream backend {
     # the netdata server
-    server <%= node["netdata"]["nginx"]["vhost"]["backend"] %>;
+    server <%= node["netdata"]["nginx"]["vhost"]["backend"] %>:19999;
     keepalive 64;
 }
 
