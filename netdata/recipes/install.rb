@@ -7,7 +7,7 @@
 # No rights reserved - Do Redistribute
 case node['platform_family']
 when 'rhel', 'fedora'
-  ['autoconf', 'automake', 'curl', 'gcc', 'git', 'libmnl-devel', 'libuuid-devel', 'lm_sensors', 'make', 'zlib-devel', 'pkgconfig', 'nc', 'python', 'python-psycopg2', 'PyYAML'].each {
+  ['autoconf', 'automake', 'curl', 'gcc', 'git', 'libmnl-devel', 'libuuid-devel', 'make', 'zlib-devel', 'pkgconfig', 'nc', 'python', 'python-psycopg2', 'PyYAML'].each {
     |item| package item do
       action :install
     end
