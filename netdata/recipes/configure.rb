@@ -1,6 +1,5 @@
 template '/etc/netdata/netdata.conf' do
   source 'netdata.conf.erb'
-  backup true
   owner 'netdata'
   group 'netdata'
   mode 00660
