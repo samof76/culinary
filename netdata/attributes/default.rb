@@ -19,5 +19,5 @@ default["netdata"]["backend"]["buffer_on_failures"] = 10
 default["netdata"]["backend"]["timeout_ms"] = 20000
 
 default["netdata"]["registry"]["enabled"] = "no"
-default["netdata"]["registry"]["registry_to_annouce"] = "http://localhosts:19999"
+default["netdata"]["registry"]["registry_to_annouce"] = node["opworks"]["instance"]["private_dns_name"]
 default["netdata"]["registry"]["verify_browser_cookies_support"] = "yes"
