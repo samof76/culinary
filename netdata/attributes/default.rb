@@ -19,7 +19,7 @@ default["netdata"]["backend"]["buffer_on_failures"] = 10
 default["netdata"]["backend"]["timeout_ms"] = 20000
 
 default["netdata"]["registry"]["enabled"] = "no"
-default["netdata"]["registry"]["registry_to_annouce"] = node["opsworks"]["instance"]["private_dns_name"]
+default["netdata"]["registry"]["registry_to_announce"] = node["opsworks"]["instance"]["private_dns_name"]
 default["netdata"]["registry"]["verify_browser_cookies_support"] = "yes"
 
 default["netdata"]["nginx"]["vhost"]["server_name"] = "server_name"

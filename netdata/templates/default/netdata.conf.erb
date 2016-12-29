@@ -73,7 +73,7 @@
 	# registry save db every new entries = 1000000
 	# registry expire idle persons days = 365
 	# registry domain =
-	registry to announce = <%= node["opsworks"]["instance"]["private_dns_name"] %>
+	registry to announce = <%= node["netdata"]["registry"]["registry_to_announce"] %>
 	registry hostname = <%= node["opsworks"]["instance"]["hostname"] %>
 	# verify browser cookies support = yes
 	# max URL length = 1024
