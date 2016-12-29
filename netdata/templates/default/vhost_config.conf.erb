@@ -9,7 +9,7 @@ server {
     listen 80;
 
     # the virtual host name of this
-    server_name <%= node["netdata"]["nginx"]["vhost"]["server_name"] %>.frontend.dev;
+    server_name <%= node["netdata"]["nginx"]["vhost"]["server_name"] %>;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
