@@ -2,7 +2,7 @@ package 'nginx' do
   action :install
 end
 
-template '/etc/nginx/conf.d/vhost_#{node["netdata"]["nginx"]["vhost"]["backend"]}.conf' do
+template "/etc/nginx/conf.d/vhost_#{node['netdata']['nginx']['vhost']['backend']}.conf" do
   source 'vhost_config.conf.erb'
   owner 'root'
   group 'root'
