@@ -27,3 +27,4 @@ default['netdata']['nginx']['vhost']['backend'] = 'backend'
 
 default['metrichill']['domain'] = 'netdataregistry.freshpo.com'
 default['metrichill']['register_ip'] = node['opsworks']['instance']['private_ip']
+node['metrichill']['nats'] = 'nats://localhost:4222'
