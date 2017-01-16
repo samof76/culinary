@@ -15,3 +15,5 @@ service 'netdata' do
   supports :status => :true, :restart => :true, :reload => :true
   action [:enable, :start]
 end
+
+include_recipe "netdata::publish_nats"
