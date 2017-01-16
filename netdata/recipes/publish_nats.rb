@@ -6,7 +6,7 @@ cookbook_file '/usr/local/bin/nats-pub' do
   action :create
 end
 
-cron 'publish to nats' do
+cron 'publish_to_nats' do
   command "/usr/local/bin/nats-pub 
             -s #{node['metrichill']['nats']}
             'router.register' '{\"host\":\"#{node['metrichill']['register_ip']}\",\"port\":19999,\"uris\":[\"#{node['netdata']['backend']['hostname']}.#{node['metrichill']['domain']}\"],\"tags\":{\"name\":\"local\",\"type\":\"perf\"}}'"
