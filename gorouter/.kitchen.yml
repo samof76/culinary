@@ -1,0 +1,15 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: gorouter
+    run_list: 
+      - recipe[gorouter::default]
+    attributes:

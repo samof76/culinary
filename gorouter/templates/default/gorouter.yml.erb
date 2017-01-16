@@ -1,0 +1,20 @@
+status:
+  port: <%= node['metrichill']['gorouter']['status']['port'] %>
+  user: "<%= node['metrichill']['gorouter']['status']['user'] %>"
+  pass: "<%= node['metrichill']['gorouter']['status']['pass'] %>"
+
+nats:
+  - host: "<%= node['metrichill']['gorouter']['nats']['host'] %>"
+    port: <%= node['metrichill']['gorouter']['nats']['port'] %>
+    user: "<%= node['metrichill']['gorouter']['nats']['user'] %>"
+    pass: "<%= node['metrichill']['gorouter']['nats']['pass'] %>"
+
+logging:
+  file: <%= node['metrichill']['gorouter']['logging']['file'] %>
+  syslog: "<%= node['metrichill']['gorouter']['logging']['syslog'] %>"
+  level: <%= node['metrichill']['gorouter']['logging']['level'] %>
+
+port: <%= node['metrichill']['gorouter']['port'] %>
+index: <%= node['metrichill']['gorouter']['index'] %>
+
+go_max_procs: <%= node['metrichill']['gorouter']['go_max_procs'] %>

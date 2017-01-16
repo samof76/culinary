@@ -1,0 +1,13 @@
+[Unit]
+Description=Gorouter Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/gorouter
+ExecStart=/srv/gorouter/bin/gorouter -c /srv/gorouter/etc/gorouter.yml
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
