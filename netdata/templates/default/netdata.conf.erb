@@ -31,7 +31,7 @@
 	# errors flood protection period = 1200
 	# errors to trigger flood protection = 200
 	# memory mode = save
-	# hostname = samuel-HP-ProBook-430-G3
+	hostname = <%= node['opsworks']['instance']['hostname'] %>-<%= node['opsworks']['stack']['name'] %>
 	# history = 3600
 	# update every = 1
 	# pthread stack size = 8388608
