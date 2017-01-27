@@ -6,13 +6,8 @@
 #
 # No rights reserved - Do Redistribute
 
-execute "kill netdata" do
-  command 'killall netdata'
-  only_if "pgrep netdata"
-end
-
 service 'netdata' do
-  supports :status => :true, :restart => :true, :reload => :true
+  supports :status => :true, :restart => :true, :reload => :true, :stop => :true
   action [:enable, :start]
 end
 
