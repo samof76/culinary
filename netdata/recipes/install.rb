@@ -25,7 +25,7 @@ git '/tmp/netdata' do
   depth 1
   revision 'master'
   action :sync
-  not_if { ::Dir.exists('/tmp/netdata')}
+  not_if { ::Dir.exists?('/tmp/netdata')}
 end
 
 execute "install script" do
