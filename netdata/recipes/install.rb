@@ -21,6 +21,7 @@ when 'ubuntu', 'debian'
 end
 
 directory '/tmp/netdata' do
+  recursive true
   action :delete
   only_if {::Dir.exists?('/tmp/netdata')}
 end
