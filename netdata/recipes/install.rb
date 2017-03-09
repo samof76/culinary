@@ -20,12 +20,16 @@ when 'ubuntu', 'debian'
   }
 end
 
+directory '/tmp/netdata' do
+  action :delete
+  only_if {::Dir.exists?('/tmp/netdata')}
+end
+
 git '/tmp/netdata' do
   repository 'https://github.com/firehol/netdata.git'
   depth 1
   revision 'master'
   action :sync
-  not_if { ::Dir.exists?('/tmp/netdata')}
 end
 
 execute "install script" do
