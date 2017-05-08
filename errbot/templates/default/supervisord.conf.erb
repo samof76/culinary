@@ -40,7 +40,7 @@ serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
 [program:errbot]
-command = /usr/bin/errbot --config <%= node['errbot']['home'] %>/<%= node['errbot']['config_file'] %>
+command = /usr/local/bin/errbot --config <%= node['errbot']['home'] %>/<%= node['errbot']['config_file'] %>
 stdout_logfile = <%= node['errbot']['home'] %>/errbot.log
 stderr_logfile = NONE
 redirect_stderr = true

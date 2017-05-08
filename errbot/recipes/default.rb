@@ -16,12 +16,12 @@ end
 
 
 execute 'install errbot' do
-  command 'pip3 install errbot'
+  command 'pip-3.4 install errbot'
   action :run
 end
 
 execute 'pip install dependencis' do
-  command 'pip3 install sleekxmpp pyasn1 pyasn1-modules hypchat'
+  command 'pip-3.4 install sleekxmpp pyasn1 pyasn1-modules hypchat'
   action :run
 end
 
