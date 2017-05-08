@@ -1,0 +1,29 @@
+import logging
+
+# This is a minimal configuration to get you started with the Text mode.
+# If you want to connect Errbot to chat services, checkout
+# the options in the more complete config-template.py from here:
+# https://raw.githubusercontent.com/errbotio/errbot/master/errbot/config-template.py
+
+BACKEND = '<%= node['errbot']['config']['backend'] %>'  # Errbot will start in text mode (console only mode) and will answer commands from there.
+
+BOT_DATA_DIR = r'<%= node['errbot']['config']['data_dir'] %>'
+BOT_EXTRA_PLUGIN_DIR = '<%= node['errbot']['config']['extra_plugin_dir'] %>'
+
+BOT_LOG_FILE = <%= node['errbot']['config']['log_file'] %>
+BOT_LOG_LEVEL = <%= node['errbot']['config']['log_level'] %>
+
+BOT_IDENTITY = {
+    'username' : '<%= node['errbot']['config']['identity']['username'] %>',
+    'password' : '<%= node['errbot']['config']['identity']['password'] %>',
+    'token'    : '<%= node['errbot']['config']['identity']['token'] %>'
+}
+
+CHATROOM_PRESENCE = (<%= node['errbot']['config']['chatroom_presence'] %>)
+CHATROOM_FN = '<%= node['errbot']['config']['chatroom_fn'] %>'
+
+BOT_ADMINS = (<%= node['errbot']['config']['admins'] %>)
+BOT_ALT_PREFIXES = (<%= node['errbot']['config']['alt_prefixes'] %>)
+
+
+XMPP_KEEPALIVE_INTERVAL = <%= node['errbot']['config']['xmpp_keepalive_interval'] %>

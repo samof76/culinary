@@ -39,5 +39,4 @@ default['metrichill']['gorouter']['supervisord'].tap do |supervisord|
   supervisord['gnatsd']['error_log']="/var/log/gnatsd/error.log"
   supervisord['gnatsd']['error_log_size']="10MB"
   supervisord['gnatsd']['error_log_backups']=10
-
 end
