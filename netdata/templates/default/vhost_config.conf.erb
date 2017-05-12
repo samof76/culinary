@@ -1,7 +1,21 @@
-upstream backend {
-    # the netdata server
-    server <%= node["netdata"]["nginx"]["vhost"]["backend"] %>:19999;
-    keepalive 64;
+server {
+    # nginx listens to this
+    listen 80;
+
+    # the virtual host name of this
+    server_name x.<%= node["netdata"]["nginx"]["vhost"]["server_name"] %>;
+
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://<%= node["netdata"]["nginx"]["vhost"]["backend"] %>:8082;
+        proxy_http_version 1.1;
+        proxy_pass_request_headers on;
+        proxy_set_header Connection "keep-alive";
+        proxy_store off;
+    }
 }
 
 server {
@@ -9,16 +23,18 @@ server {
     listen 80;
 
     # the virtual host name of this
-    server_name <%= node["netdata"]["nginx"]["vhost"]["server_name"] %>;
+    server_name *.<%= node["netdata"]["nginx"]["vhost"]["server_name"] %>;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass http://backend;
+        proxy_pass http://<%= node["netdata"]["nginx"]["vhost"]["backend"] %>:8081;
         proxy_http_version 1.1;
         proxy_pass_request_headers on;
         proxy_set_header Connection "keep-alive";
         proxy_store off;
     }
 }
+
