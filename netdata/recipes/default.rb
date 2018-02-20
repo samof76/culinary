@@ -23,4 +23,3 @@ when 'ubuntu', 'debian'
 end
 
 include_recipe "netdata::install"
-include_recipe "netdata::service"
