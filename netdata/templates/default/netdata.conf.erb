@@ -15,7 +15,7 @@
 [global]
 	# glibc malloc arena max for plugins = 1
 	# glibc malloc arena max for netdata = 1
-	hostname = <%= node['opsworks']['instance']['hostname'] %>-<%= node['opsworks']['stack']['name'] %>
+	hostname = <%= @hostname %>-<%= @stack_name %>
 	# history = 3996
 	# update every = 1
 	# config directory = /etc/netdata

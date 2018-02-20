@@ -19,12 +19,12 @@
 # default['netdata']['backend']['timeout_ms'] = 20000
 
 default['netdata']['registry']['enabled'] = 'no'
-default['netdata']['registry']['registry_to_announce'] = node['opsworks']['instance']['private_dns_name']
+default['netdata']['registry']['registry_to_announce'] = "localhost"
 default['netdata']['registry']['verify_browser_cookies_support'] = 'yes'
 
 default['netdata']['nginx']['vhost']['server_name'] = 'server_name'
 default['netdata']['nginx']['vhost']['backend'] = 'backend'
 
 default['metrichill']['domain'] = 'netdataregistry.example.com'
-default['metrichill']['register_ip'] = node['opsworks']['instance']['private_ip']
+default['metrichill']['register_ip'] = "127.0.0.1"
 default['metrichill']['nats'] = 'nats://localhost:4222'
