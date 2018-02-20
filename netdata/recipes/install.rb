@@ -5,7 +5,11 @@
 # Copyright 2016, Sambox LLP
 #
 # No rights reserved - Do Redistribute
-execute 'install netdata' do
-  command 'bash <(curl -Ss https://my-netdata.io/kickstart.sh) all --dont-wait'
+bash 'install netdata' do
+  code <<-EOH
+  wget https://my-netdata.io/kickstart.sh
+  bash kickstart.sh all --dont-wait
+  EOH
+  cwd '/tmp'
   action :run
 end
