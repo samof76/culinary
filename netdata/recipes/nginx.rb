@@ -16,7 +16,7 @@ template "/etc/nginx/conf.d/vhost_#{node['netdata']['nginx']['vhost']['backend']
   group 'root'
   mode 00744
   variables ({
-    :hostname => hostname
+    :hostname => hostname,
     :stack_name => stack_name
   })
   notifies :restart, 'service[nginx]', :immediately
